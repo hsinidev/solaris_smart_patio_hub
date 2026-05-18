@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "on-tertiary-container": "#988c7b",
+                  "primary": "#051125",
+                  "surface-container-highest": "#e5e2de",
+                  "primary-fixed-dim": "#bbc6e2",
+                  "tertiary": "#171006",
+                  "on-primary-container": "#828da7",
+                  "on-background": "#1c1c1a",
+                  "on-primary": "#ffffff",
+                  "on-secondary-fixed-variant": "#80281b",
+                  "on-tertiary-fixed": "#221a0f",
+                  "tertiary-fixed": "#efe0cd",
+                  "surface-dim": "#dcdad6",
+                  "on-error": "#ffffff",
+                  "primary-container": "#1b263b",
+                  "surface-bright": "#fcf9f5",
+                  "background": "#fcf9f5",
+                  "secondary-fixed": "#ffdad4",
+                  "tertiary-container": "#2d2519",
+                  "on-tertiary-fixed-variant": "#4f4538",
+                  "surface-tint": "#545e76",
+                  "inverse-on-surface": "#f3f0ec",
+                  "inverse-surface": "#31302e",
+                  "surface-container-high": "#eae8e4",
+                  "on-primary-fixed-variant": "#3c475d",
+                  "error": "#ba1a1a",
+                  "on-primary-fixed": "#101b30",
+                  "inverse-primary": "#bbc6e2",
+                  "on-secondary-container": "#741f13",
+                  "on-secondary": "#ffffff",
+                  "outline-variant": "#c5c6cd",
+                  "on-tertiary": "#ffffff",
+                  "tertiary-fixed-dim": "#d2c4b2",
+                  "surface-container-lowest": "#ffffff",
+                  "on-secondary-fixed": "#400200",
+                  "secondary-fixed-dim": "#ffb4a7",
+                  "surface": "#fcf9f5",
+                  "on-surface": "#1c1c1a",
+                  "on-surface-variant": "#45474d",
+                  "on-error-container": "#93000a",
+                  "primary-fixed": "#d7e2ff",
+                  "outline": "#75777d",
+                  "error-container": "#ffdad6",
+                  "secondary": "#a03f30",
+                  "surface-variant": "#e5e2de",
+                  "secondary-container": "#fe8672",
+                  "surface-container-low": "#f6f3ef",
+                  "surface-container": "#f0ede9"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.25rem",
+                  "lg": "0.5rem",
+                  "xl": "0.75rem",
+                  "full": "9999px"
+          },
+          "spacing": {
+                  "base": "8px",
+                  "lg": "32px",
+                  "md": "20px",
+                  "xs": "4px",
+                  "sm": "12px",
+                  "xl": "48px",
+                  "container-margin": "20px",
+                  "gutter": "16px"
+          },
+          "fontFamily": {
+                  "label-caps": ["Inter"],
+                  "body-md": ["Inter"],
+                  "headline-md": ["Montserrat"],
+                  "body-lg": ["Inter"],
+                  "title-sm": ["Montserrat"],
+                  "display-lg": ["Montserrat"]
+          },
+          "fontSize": {
+                  "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                  "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                  "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                  "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                  "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                  "display-lg": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .heating-glow {
+      box-shadow: 0 0 40px -10px #fe8672;
+    }
+    .glass-card {
+      backdrop-filter: blur(12px);
+      background: rgba(252, 249, 245, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+    }
+    .slider-vertical {
+      writing-mode: bt-lr; /* Bottom to top */
+      appearance: slider-vertical;
+      width: 8px;
+      height: 100%;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="sunny">sunny</span>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">Solaris-Patio</h1>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined text-primary" data-icon="sensors">sensors</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-container-margin max-w-md mx-auto">
+<!-- Header Section -->
+<section class="mb-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-xs">Climate Control</h2>
+<p class="font-body-md text-on-surface-variant">Adjust your outdoor comfort levels</p>
+</section>
+<!-- Vertical Control Grid -->
+<section class="grid grid-cols-2 gap-gutter mb-lg">
+<!-- Infrared Heat Card -->
+<div class="bg-surface-container-low rounded-xl p-md flex flex-col items-center gap-md shadow-sm relative overflow-hidden">
+<div class="absolute inset-0 bg-secondary/5 pointer-events-none"></div>
+<div class="flex flex-col items-center gap-xs z-10">
+<span class="material-symbols-outlined text-secondary" data-icon="heat_glow" style="font-variation-settings: 'FILL' 1;">Feather</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">INFRARED</span>
+</div>
+<!-- Bespoke Heat Slider -->
+<div class="h-48 w-16 bg-surface-container rounded-full p-2 flex flex-col justify-end relative heating-glow border border-secondary-container/20">
+<div class="w-full bg-gradient-to-t from-secondary to-secondary-container rounded-full" style="height: 75%;">
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-surface-container-lowest rounded-full shadow-lg border-2 border-secondary flex items-center justify-center">
+<span class="font-title-sm text-title-sm text-secondary">75%</span>
+</div>
+</div>
+</div>
+<span class="font-title-sm text-title-sm text-primary">Heating</span>
+</div>
+<!-- Cooling Fans Card -->
+<div class="bg-surface-container-low rounded-xl p-md flex flex-col items-center gap-md shadow-sm relative overflow-hidden">
+<div class="flex flex-col items-center gap-xs z-10">
+<span class="material-symbols-outlined text-primary" data-icon="air">air</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">FANS</span>
+</div>
+<!-- Bespoke Cooling Slider -->
+<div class="h-48 w-16 bg-surface-container rounded-full p-2 flex flex-col justify-end relative border border-outline-variant/10">
+<div class="w-full bg-primary-container rounded-full" style="height: 30%;">
+<div class="absolute bottom-1/4 left-1/2 -translate-x-1/2 translate-y-1/2 w-12 h-12 bg-surface-container-lowest rounded-full shadow-lg border-2 border-primary-container flex items-center justify-center">
+<span class="font-title-sm text-title-sm text-primary-container">30%</span>
+</div>
+</div>
+</div>
+<span class="font-title-sm text-title-sm text-primary">Cooling</span>
+</div>
+</section>
+<!-- Environment Status Badge -->
+<div class="bg-primary/5 rounded-full px-md py-sm flex items-center justify-between mb-lg border border-primary/10">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary" data-icon="thermostat">thermostat</span>
+<span class="font-body-md text-on-surface">Outdoor Temperature</span>
+</div>
+<span class="font-title-sm text-title-sm text-primary">22°C</span>
+</div>
+<!-- Comfort Scenes Section -->
+<section class="mb-xl">
+<div class="flex items-center justify-between mb-md">
+<h3 class="font-title-sm text-title-sm text-primary">Comfort Scenes</h3>
+<span class="font-label-caps text-label-caps text-secondary">ACTIVE: AUTO</span>
+</div>
+<div class="flex flex-col gap-sm">
+<!-- Evening Dinner Card -->
+<div class="glass-card rounded-xl p-md flex items-center gap-md shadow-[0px_10px_30px_rgba(27,38,59,0.08)] relative overflow-hidden group">
+<img alt="Dinner Scene" class="w-16 h-16 rounded-lg object-cover" data-alt="A luxurious outdoor dining table set on a high-end patio during a warm sunset. The scene is bathed in golden hour light with soft terracotta highlights reflecting off glassware. In the background, modern infrared heaters emit a subtle orange glow against a darkening navy sky. The atmosphere is sophisticated, atmospheric, and inviting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJr8-2chrNvbIjtEtYiHekOp8QbGvtwmykKFMaT_5sN9geNcXadAkMykCYQmvKVD2KCZQB9l3Yi_aQ-IF0hU8tPejntJKtEjOo4xuOfdvPIZw4XUcrrB4KUuq6GwNRve1E3F3YjN_M_459b4NLqZXmwvJZDrZzo4WMKhH-JUqHPQJYMZWGuPlnRzziat-dMt9QtQcrLbdBdt3v7DXCyY6fLo0QGpyp3lCvPgiXkorjIde6mrAqBLo_I372vHWjc3xxqdUIiPvfxSdq"/>
+<div class="flex-1">
+<h4 class="font-title-sm text-title-sm text-primary">Evening Dinner</h4>
+<p class="font-body-md text-on-surface-variant">70% Heat • 10% Fans</p>
+</div>
+<button class="bg-secondary text-on-primary p-sm rounded-full hover:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Summer Shade Card -->
+<div class="glass-card rounded-xl p-md flex items-center gap-md shadow-sm border border-outline-variant/30 relative overflow-hidden">
+<img alt="Summer Scene" class="w-16 h-16 rounded-lg object-cover" data-alt="A bright and airy modern patio lounge area during a sunny afternoon. Large grey shade louvers are partially closed to create rhythmic shadows across the sand-colored floor. Sleek ceiling fans are spinning softly, creating a sense of movement and cooling airiness. The palette is dominated by light neutral tones and deep navy accents under a clear bright sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANW_F1FV1WUOydm--fvygMc2IeyOJBWAUTpboV08OEcfY61JcFKqNw0HjWWMaAv12xJtNE9tIm30FNGAJJBjvZEec6b4kMyyFHHgCijr7ykUyzUUuhfCuDr_W_uUvZHZryqXr312Kwr8PJ92NfKcXQcb6PJlgf6nZSDviWTIgLCJa8nwr6-jDmzIbqphE4pwa_1-PM-VUH04Vy_QQdf0zKyJdmb-bFWOtYG0X_POPwg9SA4lAx7l75kahOHKVTP_qMlXryEdOPmdgQ"/>
+<div class="flex-1">
+<h4 class="font-title-sm text-title-sm text-primary">Summer Shade</h4>
+<p class="font-body-md text-on-surface-variant">0% Heat • 60% Fans</p>
+</div>
+<button class="bg-primary-container text-on-primary p-sm rounded-full hover:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Eco Mode Chip -->
+<div class="flex justify-center">
+<div class="inline-flex items-center gap-xs px-md py-xs bg-primary/10 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-primary" data-icon="eco">eco</span>
+<span class="font-label-caps text-label-caps text-primary">ECO-MODE ACTIVE</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface/90 backdrop-blur-lg border-t border-outline-variant/30 shadow-[0px_-10px_30px_rgba(27,38,59,0.08)] rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-caps text-label-caps mt-1">Louvers</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary bg-secondary-container/10 rounded-full px-4 py-1 scale-90">
+<span class="material-symbols-outlined" data-icon="thermostat" style="font-variation-settings: 'FILL' 1;">thermostat</span>
+<span class="font-label-caps text-label-caps mt-1">Climate</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="wb_incandescent">wb_incandescent</span>
+<span class="font-label-caps text-label-caps mt-1">Lights</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-caps text-label-caps mt-1">Scenes</span>
+</div>
+</nav>
+</body></html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;family=Montserrat:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#988c7b",
+                    "primary": "#051125",
+                    "surface-container-highest": "#e5e2de",
+                    "primary-fixed-dim": "#bbc6e2",
+                    "tertiary": "#171006",
+                    "on-primary-container": "#828da7",
+                    "on-background": "#1c1c1a",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#80281b",
+                    "on-tertiary-fixed": "#221a0f",
+                    "tertiary-fixed": "#efe0cd",
+                    "surface-dim": "#dcdad6",
+                    "on-error": "#ffffff",
+                    "primary-container": "#1b263b",
+                    "surface-bright": "#fcf9f5",
+                    "background": "#fcf9f5",
+                    "secondary-fixed": "#ffdad4",
+                    "tertiary-container": "#2d2519",
+                    "on-tertiary-fixed-variant": "#4f4538",
+                    "surface-tint": "#545e76",
+                    "inverse-on-surface": "#f3f0ec",
+                    "inverse-surface": "#31302e",
+                    "surface-container-high": "#eae8e4",
+                    "on-primary-fixed-variant": "#3c475d",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed": "#101b30",
+                    "inverse-primary": "#bbc6e2",
+                    "on-secondary-container": "#741f13",
+                    "on-secondary": "#ffffff",
+                    "outline-variant": "#c5c6cd",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#d2c4b2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#400200",
+                    "secondary-fixed-dim": "#ffb4a7",
+                    "surface": "#fcf9f5",
+                    "on-surface": "#1c1c1a",
+                    "on-surface-variant": "#45474d",
+                    "on-error-container": "#93000a",
+                    "primary-fixed": "#d7e2ff",
+                    "outline": "#75777d",
+                    "error-container": "#ffdad6",
+                    "secondary": "#a03f30",
+                    "surface-container": "#f0ede9",
+                    "surface-container-low": "#f6f3ef"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "lg": "32px",
+                    "md": "20px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "xl": "48px",
+                    "container-margin": "20px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"],
+                    "headline-md": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "title-sm": ["Montserrat"],
+                    "display-lg": ["Montserrat"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "display-lg": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-layer {
+            background: rgba(252, 249, 245, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(5, 17, 37, 0.1);
+        }
+        .active-glow {
+            box-shadow: 0 0 15px #C05746;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .zone-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            background: #a03f30;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(160, 63, 48, 0.3);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen pb-32">
+<!-- TopAppBar Shell -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface/80 backdrop-blur-md dark:bg-surface-container-low/80 border-b border-outline-variant/20 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="sunny">sunny</span>
+<h1 class="font-display-lg text-display-lg text-primary tracking-tight">Solaris-Patio</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="sensors">sensors</span>
+</div>
+</header>
+<main class="pt-24 px-container-margin max-w-2xl mx-auto">
+<!-- Master Control Section -->
+<section class="mb-lg">
+<div class="flex justify-between items-end mb-sm">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Lighting Control</span>
+<h2 class="font-headline-md text-headline-md text-primary mt-1">Master Brightness</h2>
+</div>
+<span class="font-title-sm text-title-sm text-secondary">85%</span>
+</div>
+<div class="relative w-full h-12 bg-surface-container rounded-xl overflow-hidden flex items-center px-2">
+<div class="absolute left-0 top-0 h-full bg-gradient-to-r from-primary to-secondary-container opacity-20 w-[85%]"></div>
+<input class="absolute inset-0 opacity-0 cursor-pointer w-full" max="100" min="0" type="range" value="85"/>
+<div class="w-full flex justify-between px-4 z-10 pointer-events-none">
+<span class="material-symbols-outlined text-primary" data-icon="dark_mode">dark_mode</span>
+<span class="material-symbols-outlined text-secondary" data-icon="light_mode">light_mode</span>
+</div>
+</div>
+</section>
+<!-- Scenes Grid Section -->
+<section class="mb-lg">
+<h3 class="font-title-sm text-title-sm text-primary mb-md">Atmospheric Scenes</h3>
+<div class="grid grid-cols-2 gap-gutter">
+<!-- Evening Dinner -->
+<div class="relative aspect-square rounded-xl overflow-hidden shadow-sm group cursor-pointer border-2 border-secondary">
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="A luxurious outdoor patio dinner setting at dusk. The table is elegantly set with fine china and candles. The background features deep navy blue twilight skies and warm terracotta glowing lanterns hanging from trees, creating a premium atmospheric mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBlahckHf4x9GxYNP8ifDgK_pupuTBHdvIeijVkBCLDy2uwGKTWZ-CJvGTQ_dHJcS-JWLWfV_cvNH7LNZhbiFIR5kAANhEBnUuce7sXWdyns1qYyxKkrR6irK81UQ3L6zuvkvzCOkf1UfcZSltEMANVX55gTqEdjAvRKJ7hSXBLyCWIh7HhqHN_51hHhln6MM4bCEK2CHYtdje_OCS8S1ViZIGkSX5Sb8Yon6STLSR7Hl66O4P49axjfJ1ljMvz063qqmPgeWqg2xe"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="material-symbols-outlined text-secondary mb-1" data-icon="restaurant" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+<p class="font-label-caps text-label-caps text-surface">Evening Dinner</p>
+<div class="w-1.5 h-1.5 bg-secondary-container rounded-full mt-2 animate-pulse"></div>
+</div>
+</div>
+<!-- Party Glow -->
+<div class="relative aspect-square rounded-xl overflow-hidden shadow-sm group cursor-pointer border border-outline-variant/30">
+<img class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity" data-alt="An energetic outdoor social lounge area with vibrant accent lighting. The scene is dominated by deep blues and punctuated by warm terracotta orange light streaks across modern architectural lines. A high-end atmosphere for social gathering under the night sky." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDywxwN-RGTqu7aoNFm7SYc2EjR-hRvwr-J4t1TyABqFzZTt5xDHWuNW8ozZzkKU3SHxk0Mw2nVzSdON5oFiVM_B-Xu57lO39BZAsP12B2gXKTsB485t4IjSN-wUKmieOca1mrNCfR3jHu1gxC9OpfXo0ZhwA-3fW4gnJ8w4n4ZGHAFE-GGTXi0Fj9f_3s5TWT6jae4NB8q2z0PYDRlhDw_TB7xMDxd9ZAEnL_cXAj-1lSF6L18WPhYrm_sXuwznao6Ki6gsDPsjJeW"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="material-symbols-outlined text-surface mb-1" data-icon="celebration">celebration</span>
+<p class="font-label-caps text-label-caps text-surface">Party Glow</p>
+</div>
+</div>
+<!-- Relax -->
+<div class="relative aspect-square rounded-xl overflow-hidden shadow-sm group cursor-pointer border border-outline-variant/30">
+<div class="absolute inset-0 bg-gradient-to-br from-[#1b263b] to-[#400200]"></div>
+<div class="absolute inset-0 opacity-40 mix-blend-overlay">
+<img class="w-full h-full object-cover" data-alt="A serene spa-like outdoor lounge with minimalist furniture. The lighting is low and diffuse, casting long soft shadows. Deep navy and muted sand colors dominate the palette, creating a tranquil and restorative atmosphere for late evening relaxation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZJq6WI4YbE9mQHqUBmg1TLeXdjs4hk9vKO0TsLb0LTMsfIY74YNtm0bmL3Wpyx1ZZGV1qz1iI43JCUyJ2r07sYpN8nnqhd8g-IST1j1L4UeV0gnbuDRYhDUu7JyBq3ghxliWrKyKj22GkhzLXCH5qzEpewPyvQdx99yHCC4cj06v-tNzQx_2Kb7RTnYpdva1gBH3ZdZgpqHoov5_0LDw5Ej8zo75M7xou6xRtQ_wzo7yHN0RwrlSf_I4Jrt4a_jcpQRrW_GRGHQ89"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="material-symbols-outlined text-surface mb-1" data-icon="spa">spa</span>
+<p class="font-label-caps text-label-caps text-surface">Relax</p>
+</div>
+</div>
+<!-- Movie Night -->
+<div class="relative aspect-square rounded-xl overflow-hidden shadow-sm group cursor-pointer border border-outline-variant/30">
+<img class="absolute inset-0 w-full h-full object-cover opacity-70" data-alt="An outdoor home cinema setup on a modern terrace. The screen is dark and the surrounding ambient lighting is dimmed to a minimal navy blue glow. The atmosphere is cozy and focused, with very low intensity terracotta safety lights along the floor perimeter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASUzjZtfJJRX4LLGNccVbh_hq1LIKMc2KwNDAovRUOULRNrWj3YW-riEEStz9GZbDD1y1RP8_0UZt1eIjGqGpWTZ6AfUr8isiaWoyK0Wu97O_SahQMNQJaT3MBjNawbn1lqGhEYuvyOdbVBs2fa9eLpp261aU-yxSyub2bYp54fHKjMA1ivPUbjGXq3EkrsJt2NQUpXLTk9DGBqNZPPeIMQS47sxITRPsNXz8OJVOlfHmXhFyNzalJBA_DoBrZ9lpeIJy52Jh9blbY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="material-symbols-outlined text-surface mb-1" data-icon="movie">movie</span>
+<p class="font-label-caps text-label-caps text-surface">Movie Night</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Zone Controls Section -->
+<section class="space-y-gutter pb-8">
+<h3 class="font-title-sm text-title-sm text-primary mb-md">Individual Zones</h3>
+<!-- Patio Zone -->
+<div class="glass-layer p-md rounded-xl shadow-sm flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="deck" style="font-variation-settings: 'FILL' 1;">deck</span>
+</div>
+<h4 class="font-body-lg text-body-lg text-primary font-bold">Patio Main</h4>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Active</span>
+<div class="w-12 h-6 bg-secondary rounded-full flex items-center justify-end px-1 shadow-inner cursor-pointer">
+<div class="w-4 h-4 bg-surface rounded-full"></div>
+</div>
+</div>
+</div>
+<input class="w-full h-1.5 bg-surface-container rounded-lg appearance-none zone-slider cursor-pointer" max="100" min="0" type="range" value="90"/>
+<div class="flex justify-between">
+<span class="font-label-caps text-label-caps text-on-tertiary-container">Warm Glow</span>
+<span class="font-label-caps text-label-caps text-secondary">90%</span>
+</div>
+</div>
+<!-- Perimeter Zone -->
+<div class="bg-surface p-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="fence">fence</span>
+</div>
+<h4 class="font-body-lg text-body-lg text-primary font-bold">Perimeter</h4>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Active</span>
+<div class="w-12 h-6 bg-secondary rounded-full flex items-center justify-end px-1 shadow-inner cursor-pointer">
+<div class="w-4 h-4 bg-surface rounded-full"></div>
+</div>
+</div>
+</div>
+<input class="w-full h-1.5 bg-surface-container rounded-lg appearance-none zone-slider cursor-pointer" max="100" min="0" type="range" value="45"/>
+<div class="flex justify-between">
+<span class="font-label-caps text-label-caps text-on-tertiary-container">Ambient Path</span>
+<span class="font-label-caps text-label-caps text-secondary">45%</span>
+</div>
+</div>
+<!-- Steps Zone -->
+<div class="bg-surface p-md rounded-xl shadow-sm border border-outline-variant/30 flex flex-col gap-sm">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="stairs">stairs</span>
+</div>
+<h4 class="font-body-lg text-body-lg text-primary font-bold">Access Steps</h4>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Off</span>
+<div class="w-12 h-6 bg-outline-variant rounded-full flex items-center justify-start px-1 shadow-inner cursor-pointer">
+<div class="w-4 h-4 bg-surface rounded-full"></div>
+</div>
+</div>
+</div>
+<input class="w-full h-1.5 bg-surface-container rounded-lg appearance-none opacity-40" disabled="" max="100" min="0" type="range" value="0"/>
+<div class="flex justify-between">
+<span class="font-label-caps text-label-caps text-on-tertiary-container">Safety Guide</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">0%</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface/90 backdrop-blur-lg dark:bg-surface-container/90 border-t border-outline-variant/30 shadow-[0px_-10px_30px_rgba(27,38,59,0.08)] rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-caps text-label-caps">Louvers</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="thermostat">thermostat</span>
+<span class="font-label-caps text-label-caps">Climate</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary bg-secondary-container/10 rounded-full px-4 py-1 scale-90 transition-transform duration-200 ease-out">
+<span class="material-symbols-outlined" data-icon="wb_incandescent" style="font-variation-settings: 'FILL' 1;">wb_incandescent</span>
+<span class="font-label-caps text-label-caps">Lights</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-caps text-label-caps">Scenes</span>
+</div>
+</nav>
+</body></html>

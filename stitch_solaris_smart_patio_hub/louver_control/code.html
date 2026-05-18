@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Solaris-Patio | Louver Control</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-container": "#988c7b",
+                      "primary": "#051125",
+                      "surface-container-highest": "#e5e2de",
+                      "primary-fixed-dim": "#bbc6e2",
+                      "tertiary": "#171006",
+                      "on-primary-container": "#828da7",
+                      "on-background": "#1c1c1a",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed-variant": "#80281b",
+                      "on-tertiary-fixed": "#221a0f",
+                      "tertiary-fixed": "#efe0cd",
+                      "surface-dim": "#dcdad6",
+                      "on-error": "#ffffff",
+                      "primary-container": "#1b263b",
+                      "surface-bright": "#fcf9f5",
+                      "background": "#fcf9f5",
+                      "secondary-fixed": "#ffdad4",
+                      "tertiary-container": "#2d2519",
+                      "on-tertiary-fixed-variant": "#4f4538",
+                      "surface-tint": "#545e76",
+                      "inverse-on-surface": "#f3f0ec",
+                      "inverse-surface": "#31302e",
+                      "surface-container-high": "#eae8e4",
+                      "on-primary-fixed-variant": "#3c475d",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#101b30",
+                      "inverse-primary": "#bbc6e2",
+                      "on-secondary-container": "#741f13",
+                      "on-secondary": "#ffffff",
+                      "outline-variant": "#c5c6cd",
+                      "on-tertiary": "#ffffff",
+                      "tertiary-fixed-dim": "#d2c4b2",
+                      "surface-container-lowest": "#ffffff",
+                      "on-secondary-fixed": "#400200",
+                      "secondary-fixed-dim": "#ffb4a7",
+                      "surface": "#fcf9f5",
+                      "on-surface": "#1c1c1a",
+                      "on-surface-variant": "#45474d",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#d7e2ff",
+                      "outline": "#75777d",
+                      "error-container": "#ffdad6",
+                      "secondary": "#a03f30",
+                      "surface-variant": "#e5e2de",
+                      "secondary-container": "#fe8672",
+                      "surface-container-low": "#f6f3ef",
+                      "surface-container": "#f0ede9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "base": "8px",
+                      "lg": "32px",
+                      "md": "20px",
+                      "xs": "4px",
+                      "sm": "12px",
+                      "xl": "48px",
+                      "container-margin": "20px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "label-caps": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-md": ["Montserrat"],
+                      "body-lg": ["Inter"],
+                      "title-sm": ["Montserrat"],
+                      "display-lg": ["Montserrat"]
+              },
+              "fontSize": {
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                      "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                      "display-lg": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+<style>
+        .glass-card {
+            background: rgba(252, 249, 245, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(5, 17, 37, 0.1);
+        }
+        .dial-track {
+            background: conic-gradient(from 180deg at 50% 50%, #e5e2de 0deg, #e5e2de 180deg, #a03f30 180deg, #a03f30 360deg);
+        }
+        .active-glow {
+            box-shadow: 0 0 20px rgba(160, 63, 48, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="sunny">sunny</span>
+<h1 class="font-display-lg text-headline-md text-primary tracking-tight">Solaris-Patio</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary-container/10 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="sensors">sensors</span>
+</button>
+</header>
+<main class="pt-24 pb-32 px-container-margin max-w-md mx-auto">
+<!-- Hero Visual Section -->
+<section class="mb-lg">
+<div class="relative w-full aspect-video rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A luxury modern patio with dark grey architectural louvers partially open, casting elegant linear shadows across a high-end stone floor. The sun is low in a warm golden sky, creating a soft, premium atmosphere. The style is minimalist and sophisticated, highlighting the interplay of light and mechanical precision in a serene outdoor living space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUWdPS9jtrUsV94eYNbKvkaUJHR6P0AnAnr7tGbzRJaIfF82AEIZwk0Oty4GWniEunfEPt03lhzeCVKz9H9-Pq5IQ1ufRyLq4N3pnttTiAxmKWD_ScduHyh4-LtlCSr0B2uy_ebaon3fIj-n4QXpYULd97FSCMOsRO_DxJuQSn7OYVN9o2UQRPsQv_yyQi3AOiwFEKRLnjLt93tQnxAmMr2_BcqP5-rNo35ZQowtH82r02GumYf14SGDSUdBKgX7BHfCXfvKgZ01af"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+<div class="absolute bottom-4 left-4 text-surface">
+<p class="font-label-caps text-label-caps opacity-80 mb-1">CURRENT STATUS</p>
+<p class="font-title-sm text-title-sm">45° Semi-Open</p>
+</div>
+</div>
+</section>
+<!-- Weather & Sun Info Bento Grid -->
+<section class="grid grid-cols-2 gap-gutter mb-lg">
+<div class="glass-card p-md rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="thermostat">thermostat</span>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">OUTDOOR</p>
+<p class="font-headline-md text-headline-md text-primary">24°C</p>
+</div>
+</div>
+<div class="glass-card p-md rounded-xl flex flex-col gap-2">
+<span class="material-symbols-outlined text-secondary" data-icon="light_mode">light_mode</span>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant">SUN POSITION</p>
+<p class="font-headline-md text-headline-md text-primary">Az 142°</p>
+</div>
+</div>
+</section>
+<!-- Main Interactive Dial Area -->
+<section class="glass-card p-lg rounded-xl mb-lg relative overflow-hidden flex flex-col items-center">
+<h2 class="font-title-sm text-title-sm mb-lg text-primary">Louver Angle Control</h2>
+<!-- Circular Dial Simulation -->
+<div class="relative w-64 h-64 flex items-center justify-center">
+<!-- SVG Dial Representation -->
+<svg class="w-full h-full transform -rotate-90">
+<circle class="opacity-30" cx="50%" cy="50%" fill="none" r="110" stroke="#e5e2de" stroke-width="12"></circle>
+<circle cx="50%" cy="50%" fill="none" r="110" stroke="#a03f30" stroke-dasharray="345" stroke-dashoffset="172.5" stroke-linecap="round" stroke-width="12"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center">
+<span class="font-display-lg text-display-lg text-primary">45<span class="text-secondary">%</span></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">INCLINATION</span>
+</div>
+<!-- Handle Control -->
+<div class="absolute top-0 left-1/2 -translate-x-1/2 -mt-2">
+<div class="w-8 h-8 bg-surface rounded-full shadow-lg border-2 border-secondary flex items-center justify-center active:scale-95 transition-transform active-glow cursor-grab">
+<div class="w-2 h-2 bg-secondary rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Discrete Step Controls -->
+<div class="flex justify-between w-full mt-lg px-4">
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">MIN</button>
+<div class="h-1 w-24 bg-surface-container-highest self-center rounded-full relative overflow-hidden">
+<div class="absolute top-0 left-0 h-full w-[45%] bg-secondary"></div>
+</div>
+<button class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors">MAX</button>
+</div>
+</section>
+<!-- Sun Tracking Toggle Card -->
+<section class="bg-primary p-md rounded-xl flex items-center justify-between shadow-xl">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-lg bg-surface/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary-container" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<div>
+<h3 class="font-title-sm text-surface text-body-lg">Sun-Tracking</h3>
+<p class="font-body-md text-on-primary-container text-xs">Automated optimal shade</p>
+</div>
+</div>
+<div class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-12 h-6 bg-primary-container border border-outline/20 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[4px] after:left-[4px] after:bg-secondary after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-secondary/20"></div>
+</div>
+</section>
+<!-- Secondary Mode Chips -->
+<section class="mt-lg flex gap-sm overflow-x-auto pb-4 no-scrollbar">
+<div class="px-md py-sm bg-primary/5 border border-primary/10 rounded-full flex items-center gap-2 flex-shrink-0">
+<span class="material-symbols-outlined text-sm" data-icon="eco">eco</span>
+<span class="font-label-caps text-label-caps">ECO-MODE</span>
+</div>
+<div class="px-md py-sm bg-primary/5 border border-primary/10 rounded-full flex items-center gap-2 flex-shrink-0">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+<span class="font-label-caps text-label-caps">SCHEDULED</span>
+</div>
+<div class="px-md py-sm bg-primary/5 border border-primary/10 rounded-full flex items-center gap-2 flex-shrink-0">
+<span class="material-symbols-outlined text-sm" data-icon="umbrella">umbrella</span>
+<span class="font-label-caps text-label-caps">RAIN-GUARD</span>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface/90 backdrop-blur-lg border-t border-outline-variant/30 shadow-[0px_-10px_30px_rgba(27,38,59,0.08)] rounded-t-xl">
+<!-- Louvers (Active) -->
+<a class="flex flex-col items-center justify-center text-secondary bg-secondary-container/10 rounded-full px-4 py-1 active:scale-90 transition-transform duration-200 ease-out" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-label-caps text-label-caps mt-1">Louvers</span>
+</a>
+<!-- Climate -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="thermostat">thermostat</span>
+<span class="font-label-caps text-label-caps mt-1">Climate</span>
+</a>
+<!-- Lights -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="wb_incandescent">wb_incandescent</span>
+<span class="font-label-caps text-label-caps mt-1">Lights</span>
+</a>
+<!-- Scenes -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-caps text-label-caps mt-1">Scenes</span>
+</a>
+</nav>
+</body></html>

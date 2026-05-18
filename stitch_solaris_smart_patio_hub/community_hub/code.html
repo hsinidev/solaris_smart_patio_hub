@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Community Hub - Solaris Patio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline-variant": "#c5c6cd",
+                        "surface-container": "#f0ede9",
+                        "on-secondary-fixed-variant": "#80281b",
+                        "on-primary-container": "#828da7",
+                        "inverse-on-surface": "#f3f0ec",
+                        "surface-bright": "#fcf9f5",
+                        "outline": "#75777d",
+                        "tertiary-container": "#2d2519",
+                        "surface-variant": "#e5e2de",
+                        "inverse-surface": "#31302e",
+                        "on-surface-variant": "#45474d",
+                        "on-secondary-fixed": "#400200",
+                        "on-surface": "#1c1c1a",
+                        "on-background": "#1c1c1a",
+                        "surface": "#fcf9f5",
+                        "on-tertiary-fixed-variant": "#4f4538",
+                        "on-error-container": "#93000a",
+                        "surface-dim": "#dcdad6",
+                        "surface-container-low": "#f6f3ef",
+                        "on-secondary-container": "#741f13",
+                        "error-container": "#ffdad6",
+                        "primary": "#051125",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#3c475d",
+                        "secondary-fixed-dim": "#ffb4a7",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#eae8e4",
+                        "surface-container-highest": "#e5e2de",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed-dim": "#bbc6e2",
+                        "tertiary-fixed-dim": "#d2c4b2",
+                        "background": "#fcf9f5",
+                        "surface-tint": "#545e76",
+                        "on-error": "#ffffff",
+                        "primary-container": "#1b263b",
+                        "on-tertiary-container": "#988c7b",
+                        "secondary-fixed": "#ffdad4",
+                        "on-tertiary-fixed": "#221a0f",
+                        "secondary-container": "#fe8672",
+                        "secondary": "#a03f30",
+                        "on-primary-fixed": "#101b30",
+                        "tertiary-fixed": "#efe0cd",
+                        "primary-fixed": "#d7e2ff",
+                        "on-primary": "#ffffff",
+                        "inverse-primary": "#bbc6e2",
+                        "tertiary": "#171006"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "32px",
+                        "xl": "48px",
+                        "container-margin": "20px",
+                        "base": "8px",
+                        "gutter": "16px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "md": "20px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "title-sm": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(252, 249, 245, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .heating-glow {
+            box-shadow: 0 0 20px rgba(160, 63, 48, 0.15);
+        }
+        .heating-glow-active {
+            box-shadow: 0 0 15px #C05746;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c5c6cd;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary/30">
+<!-- SideNavBar Shell -->
+<aside class="fixed left-0 top-0 h-full w-64 z-40 bg-surface border-r border-outline-variant shadow-md flex flex-col">
+<div class="p-lg">
+<h1 class="text-headline-md font-headline-md text-primary">Solaris Patio</h1>
+<p class="text-body-md text-on-surface-variant">Premium Comfort</p>
+</div>
+<nav class="flex-1 px-sm space-y-xs">
+<!-- Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+<!-- Admin Panel -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-body-md">Admin Panel</span>
+</a>
+<!-- Community (Active State) -->
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg font-bold active:scale-95 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="groups" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span class="font-body-md">Community</span>
+</a>
+<!-- Account -->
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95 duration-150 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-body-md">Account</span>
+</a>
+</nav>
+<div class="p-md mt-auto border-t border-outline-variant/30 flex items-center gap-3">
+<img alt="User profile" class="w-10 h-10 rounded-full object-cover" data-alt="A close-up professional portrait of a modern, stylish person with a warm smile, set against a blurred outdoor architectural background. The lighting is soft and natural, emphasizing a high-end, approachable aesthetic. The image uses a clean, bright palette that complements a premium smart home interface design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0K9IBf5hU7bPpVWrYloqoGzBbadeYVmob3n9aeifMt2OCft0Vpll6l4yU90Zyypm3IwHCNQ1YJTUZQLLbmuay9QtElOTYxtfs4HJeCHSHj8qxcGXrLmY3mHFaXV2CLKc5wGHjMpo_2P0XPbEW5uJIQmTyXGLL-VD60E9ViJLx2E8zKe0Zdbwa8JQwe_c8noZ015vyy4VbBHk6AXuOBP4FmErUQwNToelY7PvS-sPMTDQlsexTEBFthWly0w7wJZXZkSomd73Rp3lG"/>
+<div>
+<p class="font-bold text-primary">Alex Rivers</p>
+<p class="text-xs text-on-surface-variant">Patio Enthusiast</p>
+</div>
+</div>
+</aside>
+<!-- TopNavBar Shell -->
+<header class="fixed top-0 right-0 left-64 h-16 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30 flex items-center justify-between px-md z-30 shadow-sm">
+<div class="flex items-center gap-base">
+<span class="font-display-lg text-display-lg text-primary">Community Hub</span>
+</div>
+<div class="flex items-center gap-sm">
+<button class="hover:bg-surface-container-low rounded-full p-2 transition-all active:opacity-80">
+<span class="material-symbols-outlined text-primary" data-icon="wifi">wifi</span>
+</button>
+<button class="hover:bg-surface-container-low rounded-full p-2 transition-all active:opacity-80 relative">
+<span class="material-symbols-outlined text-primary" data-icon="notifications">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+<button class="hover:bg-surface-container-low rounded-full p-2 transition-all active:opacity-80">
+<span class="material-symbols-outlined text-primary" data-icon="settings">settings</span>
+</button>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="max-w-6xl mx-auto p-lg space-y-xl">
+<!-- Hero Search Section -->
+<section class="relative rounded-xl overflow-hidden h-[300px] flex items-center justify-center p-xl">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-80" data-alt="An expansive, luxury modern outdoor patio during sunset, featuring warm glowing ambient lighting and high-end wooden furniture. The atmosphere is serene and technical, with a focus on smart home integration and comfort. The color palette includes deep navy blues, warm terracotta glows, and soft sandy neutrals." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWDvpX9c3LesdmmMoQlgpmn_qvsjvgqrc4tWzbFTLUWJAzyDCyUbO7WYUF-bieetKWxp6pRjVzg2jNt_CI3Aadc-_DtWuqrXKES4ii0k_HHQJ28IqaXi1_XqBte1L7Lg3KjQVVoD33-j2yWs5V2uuDJ7Cvv0MU6vxvVh9Z8AEolQ-W0VdbddUH1aYg6oc89XmF7lc09gT8pQRq_6Guf1fjajPReW8Z_R1uUBo9aJb7v-BPCYaApJnuyEFLO70xqApb4oixCTTPe570"/>
+<div class="absolute inset-0 bg-gradient-to-b from-primary/20 to-primary/60"></div>
+</div>
+<div class="relative z-10 w-full max-w-2xl text-center space-y-md">
+<h2 class="text-display-lg font-display-lg text-surface">How can we help your patio glow?</h2>
+<div class="relative group">
+<input class="w-full bg-surface/90 backdrop-blur-md border-b-2 border-primary focus:border-secondary transition-all outline-none py-4 px-12 rounded-lg text-on-surface shadow-xl placeholder:text-on-surface-variant" placeholder="Search for installation tips, automation tricks..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-primary" data-icon="search">search</span>
+</div>
+</div>
+</section>
+<!-- FAQ Categories - Bento Grid -->
+<section class="space-y-md">
+<div class="flex items-end justify-between">
+<div>
+<span class="text-label-caps font-label-caps text-secondary uppercase tracking-widest">Knowledge Base</span>
+<h3 class="text-headline-md font-headline-md text-primary">Common Questions</h3>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Installation -->
+<div class="glass-card p-md rounded-xl hover:shadow-lg transition-all group cursor-pointer border-l-4 border-l-secondary/30 hover:border-l-secondary">
+<div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-md group-hover:bg-secondary/10 transition-colors">
+<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors" data-icon="build">build</span>
+</div>
+<h4 class="text-title-sm font-title-sm text-primary mb-xs">Installation</h4>
+<p class="text-body-md text-on-surface-variant">From wiring basics to mounting your Solaris Patio units securely.</p>
+<div class="mt-md flex items-center text-xs font-bold text-secondary gap-1">
+                            VIEW 12 ARTICLES <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Automation -->
+<div class="glass-card p-md rounded-xl hover:shadow-lg transition-all group cursor-pointer border-l-4 border-l-primary/30 hover:border-l-primary">
+<div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-md group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="smart_toy">smart_toy</span>
+</div>
+<h4 class="text-title-sm font-title-sm text-primary mb-xs">Automation</h4>
+<p class="text-body-md text-on-surface-variant">Setting up routines, eco-modes, and syncing with external sensors.</p>
+<div class="mt-md flex items-center text-xs font-bold text-primary gap-1">
+                            VIEW 24 ARTICLES <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Troubleshooting -->
+<div class="glass-card p-md rounded-xl hover:shadow-lg transition-all group cursor-pointer border-l-4 border-l-outline/30 hover:border-l-outline">
+<div class="w-12 h-12 rounded-lg bg-primary/5 flex items-center justify-center mb-md group-hover:bg-outline/10 transition-colors">
+<span class="material-symbols-outlined text-primary" data-icon="contact_support">contact_support</span>
+</div>
+<h4 class="text-title-sm font-title-sm text-primary mb-xs">Troubleshooting</h4>
+<p class="text-body-md text-on-surface-variant">Resolve connectivity issues and calibrate your sensors for peak performance.</p>
+<div class="mt-md flex items-center text-xs font-bold text-on-surface-variant gap-1">
+                            VIEW 8 ARTICLES <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Discussions -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-xl">
+<!-- Discussion Board -->
+<div class="lg:col-span-2 space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="text-headline-md font-headline-md text-primary">Setup Tips &amp; Stories</h3>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-bold flex items-center gap-2 active:scale-95 transition-transform shadow-md">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                            Post a Tip
+                        </button>
+</div>
+<div class="space-y-gutter">
+<!-- Comment Item 1 -->
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant/20 hover:border-secondary/40 transition-colors">
+<div class="flex items-start gap-md">
+<img alt="User" class="w-10 h-10 rounded-full object-cover" data-alt="A close-up portrait of a thoughtful person in a high-end architectural setting, with soft side-lighting emphasizing their profile. The aesthetic is clean, professional, and slightly moody, fitting a premium brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADKX1uKbh3-tEpUbRRaWu23mgOxsByhck9_8YgZLrb2KovE8EOCCloNoh1oI0RBKH79IBQmwxCJzxak5LfmzUlfP-PpF52azrn4cKd9cYSwMtr9xUHvOHKtxkkBaNxzOD2vKEYtfoMUmEtKxu2x2KEjc7w3AnX7rBdjYB67ZdAqVgXNF9cibsDZUGmpBCXR0kLQvtJalCzeCUM4LgWb5z-NAhrLIAef-0O_SrYFziSxwuJt0W2FxzIYG-a95oAJy47KRBA9Qnc7Hdz"/>
+<div class="flex-1 space-y-xs">
+<div class="flex items-center justify-between">
+<span class="font-bold text-primary">Marcus Jensen</span>
+<span class="text-xs text-on-surface-variant">2 hours ago</span>
+</div>
+<p class="text-body-md text-on-surface">Finally got the <span class="text-secondary font-bold">Solaris Radiant</span> synced with my outdoor wind sensors. The automation works flawlessly—it shuts down automatically when the gusts hit 15mph. Highly recommend this for safety!</p>
+<div class="flex items-center gap-md pt-sm">
+<button class="flex items-center gap-1 text-xs font-bold text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="thumb_up">thumb_up</span> 42
+                                        </button>
+<button class="flex items-center gap-1 text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span> 12 Comments
+                                        </button>
+<span class="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-wider">Automation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Comment Item 2 -->
+<div class="bg-surface-container-low p-md rounded-xl border border-outline-variant/20 hover:border-secondary/40 transition-colors">
+<div class="flex items-start gap-md">
+<img alt="User" class="w-10 h-10 rounded-full object-cover" data-alt="A portrait of a smiling woman in a warm-lit outdoor environment, possibly a luxury patio. The image is crisp with high-end color grading that emphasizes natural skin tones and a soft, blurred background of terracotta textures and green foliage." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDicenxCF-K4YkBZdGEdUu6NpJK-EgJWBudyFxIGatl4ii3KLlwZw8cr3yttRyjkQO8AxYJ8xdjJgvhHQjWf7fNyVaeF022I5lwNT6FwCRsAt2hf-_pR8ng4CfK3iZy12Xzqd1sE8gWJIcBuH0tjXtXkechg9wBrs4aO0t_3DBJEq234tUB-1lFptvqRnnaX6jbHxu2FYMqbfNK4HSI7JQJaiPpN2-ZYzduIajKoOi9le2U5CsF1tR1yhhZ9ZG-UHtQHVpHiz0mhXux"/>
+<div class="flex-1 space-y-xs">
+<div class="flex items-center justify-between">
+<span class="font-bold text-primary">Elena Rodriguez</span>
+<span class="text-xs text-on-surface-variant">Yesterday</span>
+</div>
+<p class="text-body-md text-on-surface">Pro tip for the <span class="text-secondary font-bold">Lumina Rails</span>: If you mount them at a 15-degree downward angle, the glow on the pavers is much softer and more atmospheric. Perfect for late-night hosting.</p>
+<div class="flex items-center gap-md pt-sm">
+<button class="flex items-center gap-1 text-xs font-bold text-on-surface-variant hover:text-secondary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="thumb_up">thumb_up</span> 108
+                                        </button>
+<button class="flex items-center gap-1 text-xs font-bold text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="chat_bubble">chat_bubble</span> 5 Comments
+                                        </button>
+<span class="px-2 py-0.5 bg-primary/10 text-primary rounded-full text-[10px] font-bold uppercase tracking-wider">Lighting</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Content -->
+<div class="space-y-xl">
+<!-- Featured Guide -->
+<div class="bg-primary p-md rounded-xl text-surface relative overflow-hidden group">
+<div class="relative z-10 space-y-sm">
+<span class="text-label-caps font-label-caps text-secondary-fixed tracking-widest">Editor's Pick</span>
+<h4 class="text-title-sm font-title-sm">Designing for Winter: Keeping Your Patio Cozy</h4>
+<p class="text-sm opacity-80">Master the art of heat zones and lighting for the cold season.</p>
+<button class="mt-md text-xs font-bold py-2 px-4 bg-surface text-primary rounded-full hover:bg-secondary hover:text-surface transition-all">READ GUIDE</button>
+</div>
+<div class="absolute -bottom-4 -right-4 opacity-10 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[120px]" data-icon="ac_unit">ac_unit</span>
+</div>
+</div>
+<!-- Top Contributors -->
+<div class="glass-card p-md rounded-xl space-y-md">
+<h4 class="text-title-sm font-title-sm text-primary">Top Contributors</h4>
+<div class="space-y-sm">
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-xs">SK</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-primary">Sarah Kim</p>
+<p class="text-[10px] text-on-surface-variant">84 Tips Shared</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="workspace_premium" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div class="flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-xs">DB</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-primary">David Burke</p>
+<p class="text-[10px] text-on-surface-variant">52 Tips Shared</p>
+</div>
+<span class="material-symbols-outlined text-primary text-sm" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<!-- Eco-Mode Chip -->
+<div class="flex items-center gap-2 p-3 bg-primary/5 rounded-full border border-primary/10">
+<span class="material-symbols-outlined text-primary text-lg" data-icon="eco">eco</span>
+<span class="text-xs font-bold text-primary">Community Goal: 1.2MW Saved This Month</span>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- FAB for Quick Actions -->
+<button class="fixed bottom-lg right-lg w-14 h-14 bg-secondary text-on-secondary rounded-full flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all z-50 heating-glow-active">
+<span class="material-symbols-outlined" data-icon="help_center">help_center</span>
+</button>
+</body></html>

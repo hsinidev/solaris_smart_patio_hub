@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline-variant": "#c5c6cd",
+                    "surface-container": "#f0ede9",
+                    "on-secondary-fixed-variant": "#80281b",
+                    "on-primary-container": "#828da7",
+                    "inverse-on-surface": "#f3f0ec",
+                    "surface-bright": "#fcf9f5",
+                    "outline": "#75777d",
+                    "tertiary-container": "#2d2519",
+                    "surface-variant": "#e5e2de",
+                    "inverse-surface": "#31302e",
+                    "on-surface-variant": "#45474d",
+                    "on-secondary-fixed": "#400200",
+                    "on-surface": "#1c1c1a",
+                    "on-background": "#1c1c1a",
+                    "surface": "#fcf9f5",
+                    "on-tertiary-fixed-variant": "#4f4538",
+                    "on-error-container": "#93000a",
+                    "surface-dim": "#dcdad6",
+                    "surface-container-low": "#f6f3ef",
+                    "on-secondary-container": "#741f13",
+                    "error-container": "#ffdad6",
+                    "primary": "#051125",
+                    "on-secondary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed-variant": "#3c475d",
+                    "secondary-fixed-dim": "#ffb4a7",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#eae8e4",
+                    "surface-container-highest": "#e5e2de",
+                    "on-tertiary": "#ffffff",
+                    "primary-fixed-dim": "#bbc6e2",
+                    "tertiary-fixed-dim": "#d2c4b2",
+                    "background": "#fcf9f5",
+                    "surface-tint": "#545e76",
+                    "on-error": "#ffffff",
+                    "primary-container": "#1b263b",
+                    "on-tertiary-container": "#988c7b",
+                    "secondary-fixed": "#ffdad4",
+                    "on-tertiary-fixed": "#221a0f",
+                    "secondary-container": "#fe8672",
+                    "secondary": "#a03f30",
+                    "on-primary-fixed": "#101b30",
+                    "tertiary-fixed": "#efe0cd",
+                    "primary-fixed": "#d7e2ff",
+                    "on-primary": "#ffffff",
+                    "inverse-primary": "#bbc6e2",
+                    "tertiary": "#171006"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "lg": "32px",
+                    "xl": "48px",
+                    "container-margin": "20px",
+                    "base": "8px",
+                    "gutter": "16px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "md": "20px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Montserrat"],
+                    "headline-md": ["Montserrat"],
+                    "title-sm": ["Montserrat"],
+                    "body-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "body-md": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(252, 249, 245, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .terracotta-glow {
+            box-shadow: 0 0 20px rgba(160, 63, 48, 0.3);
+        }
+        .louver-blade {
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .active-glow-handle {
+            box-shadow: 0 0 15px #C05746;
+        }
+        body {
+            background-color: #fcf9f5;
+            color: #1c1c1a;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-hidden">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full z-40 h-screen w-64 border-r border-outline-variant bg-surface flex flex-col">
+<div class="p-lg">
+<h1 class="text-headline-md font-headline-md text-primary">Solaris Patio</h1>
+<p class="text-on-surface-variant text-label-caps">Premium Comfort</p>
+</div>
+<nav class="flex-1 px-sm space-y-sm">
+<a class="flex items-center gap-3 px-4 py-3 bg-primary-container text-on-primary-container rounded-lg font-bold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span>Admin Panel</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span>Community</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-on-surface-variant hover:bg-surface-container-high transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+<span>Account</span>
+</a>
+</nav>
+<div class="p-md mt-auto border-t border-outline-variant/30">
+<div class="flex items-center gap-md">
+<img alt="User profile" class="w-10 h-10 rounded-full object-cover" data-alt="A professional headshot of a sophisticated man in his 40s with a warm smile, set against a softly blurred architectural background with clean lines. The lighting is warm and natural, reflecting a high-end, premium lifestyle. The overall color palette is muted with earthy tones of sand and soft browns." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAw66Ow3NkhkLAlcgXJziT-6Gu8kGfDy-dAmLZIVXcyr5xynZly5NMw_N4uKY-fOF-yf8EQrWLpcrBFFXrGnro-7XORiMKIjKXkuwDQZu2MaqFw5kZYgp9NZUyoama6A6CUZ37oGuC6_DM7EhirOiAzoQj06qQk2LiAuqbgz-26dDk5lcvOBU3onCehRvYoUyTh0AwmvHdvZm_kDuMr7H8CY3BtYfgXul7cnIMyVZVKz3Z6spmjvCbP1LxPb8Ymkcn3ZagfIoBAzC-k"/>
+<div>
+<p class="font-bold text-primary">Julian Vance</p>
+<p class="text-xs text-on-surface-variant">Home Owner</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 right-0 left-64 h-16 flex items-center justify-between px-md z-30 bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
+<h2 class="font-title-sm text-title-sm text-primary">Patio Control Center</h2>
+<div class="flex items-center gap-md">
+<div class="flex items-center gap-sm">
+<button class="hover:bg-surface-container-low rounded-full p-2 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">wifi</span>
+</button>
+<button class="hover:bg-surface-container-low rounded-full p-2 transition-all relative">
+<span class="material-symbols-outlined text-on-surface-variant">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full"></span>
+</button>
+<button class="hover:bg-surface-container-low rounded-full p-2 transition-all">
+<span class="material-symbols-outlined text-on-surface-variant">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 mt-16 p-lg h-[calc(100vh-64px)] overflow-y-auto">
+<div class="max-w-7xl mx-auto space-y-lg">
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-lg">
+<!-- Hero Weather Widget -->
+<section class="col-span-12 lg:col-span-8 glass-card rounded-xl p-lg relative overflow-hidden flex flex-col justify-between h-64">
+<div class="relative z-10">
+<div class="flex items-center gap-sm mb-xs">
+<span class="material-symbols-outlined text-secondary">partly_cloudy_day</span>
+<span class="font-label-caps text-on-surface-variant">Live Outdoor Conditions</span>
+</div>
+<h3 class="font-display-lg text-display-lg text-primary">74°F</h3>
+<p class="text-body-lg text-on-surface-variant">Partly Cloudy • Malibu, CA</p>
+</div>
+<div class="relative z-10 flex gap-xl mt-lg">
+<div class="text-center">
+<p class="text-xs font-label-caps text-on-surface-variant uppercase mb-xs">Humidity</p>
+<p class="font-bold text-primary">42%</p>
+</div>
+<div class="text-center">
+<p class="text-xs font-label-caps text-on-surface-variant uppercase mb-xs">Wind</p>
+<p class="font-bold text-primary">8mph SW</p>
+</div>
+<div class="text-center">
+<p class="text-xs font-label-caps text-on-surface-variant uppercase mb-xs">UV Index</p>
+<p class="font-bold text-primary">High (7)</p>
+</div>
+</div>
+<!-- Ambient Background Decoration -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-secondary-container/10 blur-3xl"></div>
+</section>
+<!-- Quick Actions / Modes -->
+<section class="col-span-12 lg:col-span-4 space-y-md">
+<div class="glass-card rounded-xl p-md flex items-center justify-between border-l-4 border-secondary">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">eco</span>
+<div>
+<p class="font-bold text-primary">Eco-Optimization</p>
+<p class="text-xs text-on-surface-variant">Active for 4.2 hours</p>
+</div>
+</div>
+<div class="w-12 h-6 bg-secondary rounded-full p-1 flex justify-end">
+<div class="w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+<div class="glass-card rounded-xl p-md flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">schedule</span>
+<div>
+<p class="font-bold text-primary">Evening Warmth</p>
+<p class="text-xs text-on-surface-variant">Scheduled for 6:30 PM</p>
+</div>
+</div>
+<button class="text-primary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined">edit</span>
+</button>
+</div>
+</section>
+<!-- Louver Control (Interactive Visualization) -->
+<section class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface rounded-xl p-lg shadow-md border border-outline-variant/20 flex flex-col">
+<div class="flex justify-between items-center mb-lg">
+<h4 class="font-title-sm text-title-sm text-primary">Louver Angle</h4>
+<span class="bg-surface-container text-primary px-3 py-1 rounded-full text-xs font-bold">45° Open</span>
+</div>
+<div class="flex-1 flex items-center justify-center py-xl">
+<div class="relative w-48 h-32 flex flex-col gap-3">
+<!-- Simulated Louver Blades -->
+<div class="h-2 w-full bg-primary-fixed-dim rounded-full louver-blade origin-left" style="transform: rotate(45deg);"></div>
+<div class="h-2 w-full bg-primary-fixed-dim rounded-full louver-blade origin-left" style="transform: rotate(45deg);"></div>
+<div class="h-2 w-full bg-primary-fixed-dim rounded-full louver-blade origin-left" style="transform: rotate(45deg);"></div>
+<div class="h-2 w-full bg-primary-fixed-dim rounded-full louver-blade origin-left" style="transform: rotate(45deg);"></div>
+<div class="h-2 w-full bg-primary-fixed-dim rounded-full louver-blade origin-left" style="transform: rotate(45deg);"></div>
+</div>
+</div>
+<div class="mt-lg">
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" max="90" min="0" type="range" value="45"/>
+<div class="flex justify-between mt-sm text-xs font-label-caps text-on-surface-variant">
+<span>Closed</span>
+<span>Optimal</span>
+<span>Max Air</span>
+</div>
+</div>
+</section>
+<!-- Heating Control (Terracotta Glow Sliders) -->
+<section class="col-span-12 md:col-span-6 lg:col-span-4 bg-surface rounded-xl p-lg shadow-md border border-outline-variant/20">
+<div class="flex justify-between items-center mb-lg">
+<h4 class="font-title-sm text-title-sm text-primary">Radiant Heating</h4>
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">heat</span>
+</div>
+<div class="space-y-xl">
+<div>
+<div class="flex justify-between mb-sm">
+<label class="text-body-md font-bold">North Zone</label>
+<span class="text-secondary font-bold">85%</span>
+</div>
+<div class="relative h-2 bg-surface-container-high rounded-full overflow-visible">
+<div class="absolute left-0 top-0 h-full bg-secondary rounded-full terracotta-glow" style="width: 85%"></div>
+<div class="absolute w-5 h-5 bg-secondary rounded-full -top-1.5 active-glow-handle border-2 border-white" style="left: 85%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-sm">
+<label class="text-body-md font-bold">Lounge Area</label>
+<span class="text-on-surface-variant font-bold">Off</span>
+</div>
+<div class="relative h-2 bg-surface-container-high rounded-full">
+<div class="absolute left-0 top-0 h-full bg-outline-variant/30 rounded-full" style="width: 0%"></div>
+<div class="absolute w-5 h-5 bg-white border border-outline-variant rounded-full -top-1.5" style="left: 0%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between mb-sm">
+<label class="text-body-md font-bold">Dining Zone</label>
+<span class="text-secondary font-bold">40%</span>
+</div>
+<div class="relative h-2 bg-surface-container-high rounded-full">
+<div class="absolute left-0 top-0 h-full bg-secondary rounded-full terracotta-glow" style="width: 40%"></div>
+<div class="absolute w-5 h-5 bg-secondary rounded-full -top-1.5 active-glow-handle border-2 border-white" style="left: 40%"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lighting Zones -->
+<section class="col-span-12 lg:col-span-4 bg-surface rounded-xl p-lg shadow-md border border-outline-variant/20">
+<div class="flex justify-between items-center mb-lg">
+<h4 class="font-title-sm text-title-sm text-primary">Atmospheric Lighting</h4>
+<span class="material-symbols-outlined text-primary">light_mode</span>
+</div>
+<div class="grid grid-cols-2 gap-md">
+<button class="p-md bg-primary text-on-primary rounded-xl flex flex-col items-center gap-sm transition-all active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">wb_iridescent</span>
+<span class="text-xs font-bold">Perimeter LED</span>
+<span class="text-[10px] opacity-70">On • 100%</span>
+</button>
+<button class="p-md glass-card rounded-xl flex flex-col items-center gap-sm border-2 border-transparent hover:border-primary/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-primary">fluorescent</span>
+<span class="text-xs font-bold text-primary">Accent Spot</span>
+<span class="text-[10px] text-on-surface-variant">Off</span>
+</button>
+<button class="p-md glass-card rounded-xl flex flex-col items-center gap-sm transition-all active:scale-95">
+<span class="material-symbols-outlined text-primary">light</span>
+<span class="text-xs font-bold text-primary">Main Downlight</span>
+<span class="text-[10px] text-on-surface-variant">Off</span>
+</button>
+<button class="p-md bg-secondary text-white rounded-xl flex flex-col items-center gap-sm transition-all active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bedtime</span>
+<span class="text-xs font-bold">Night Glow</span>
+<span class="text-[10px] opacity-70">On • 20%</span>
+</button>
+</div>
+<div class="mt-lg pt-lg border-t border-outline-variant/30">
+<p class="text-xs font-label-caps text-on-surface-variant mb-sm uppercase">Global Brightness</p>
+<input class="w-full h-1 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-secondary" type="range"/>
+</div>
+</section>
+<!-- Status Cards Section -->
+<section class="col-span-12 grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="glass-card p-md rounded-xl flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">energy_savings_leaf</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-label-caps uppercase">Power Usage</p>
+<p class="text-lg font-bold text-primary">1.2 kWh <span class="text-xs font-normal text-on-surface-variant">/ Current</span></p>
+</div>
+</div>
+<div class="glass-card p-md rounded-xl flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">history</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-label-caps uppercase">Last Event</p>
+<p class="text-lg font-bold text-primary">12:45 PM <span class="text-xs font-normal text-on-surface-variant">/ Shade Close</span></p>
+</div>
+</div>
+<div class="glass-card p-md rounded-xl flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">update</span>
+</div>
+<div>
+<p class="text-xs text-on-surface-variant font-label-caps uppercase">System Status</p>
+<p class="text-lg font-bold text-primary">Optimal <span class="text-xs font-normal text-on-surface-variant">/ v2.4.1</span></p>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Only for Main Dashboard) -->
+<button class="fixed bottom-lg right-lg w-14 h-14 bg-secondary text-on-secondary rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110 active:scale-95 z-50 terracotta-glow">
+<span class="material-symbols-outlined">add</span>
+</button>
+</body></html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Montserrat:wght@600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(252, 249, 245, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(5, 17, 37, 0.1);
+        }
+        .terracotta-glow {
+            box-shadow: 0 0 15px rgba(192, 87, 70, 0.4);
+        }
+        .navy-glass-border {
+            border: 1px solid rgba(5, 17, 37, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-container": "#988c7b",
+                        "primary": "#051125",
+                        "surface-container-highest": "#e5e2de",
+                        "primary-fixed-dim": "#bbc6e2",
+                        "tertiary": "#171006",
+                        "on-primary-container": "#828da7",
+                        "on-background": "#1c1c1a",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed-variant": "#80281b",
+                        "on-tertiary-fixed": "#221a0f",
+                        "tertiary-fixed": "#efe0cd",
+                        "surface-dim": "#dcdad6",
+                        "on-error": "#ffffff",
+                        "primary-container": "#1b263b",
+                        "surface-bright": "#fcf9f5",
+                        "background": "#fcf9f5",
+                        "secondary-fixed": "#ffdad4",
+                        "tertiary-container": "#2d2519",
+                        "on-tertiary-fixed-variant": "#4f4538",
+                        "surface-tint": "#545e76",
+                        "inverse-on-surface": "#f3f0ec",
+                        "inverse-surface": "#31302e",
+                        "surface-container-high": "#eae8e4",
+                        "on-primary-fixed-variant": "#3c475d",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#101b30",
+                        "inverse-primary": "#bbc6e2",
+                        "on-secondary-container": "#741f13",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c5c6cd",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#d2c4b2",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#400200",
+                        "secondary-fixed-dim": "#ffb4a7",
+                        "surface": "#fcf9f5",
+                        "on-surface": "#1c1c1a",
+                        "on-surface-variant": "#45474d",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#d7e2ff",
+                        "outline": "#75777d",
+                        "error-container": "#ffdad6",
+                        "secondary": "#a03f30",
+                        "surface-variant": "#e5e2de",
+                        "secondary-container": "#fe8672",
+                        "surface-container-low": "#f6f3ef",
+                        "surface-container": "#f0ede9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "lg": "32px",
+                        "md": "20px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "xl": "48px",
+                        "container-margin": "20px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Montserrat"],
+                        "body-lg": ["Inter"],
+                        "title-sm": ["Montserrat"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700"}],
+                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+                        "title-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}],
+                        "display-lg": ["34px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md min-h-screen pb-24">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-container-margin h-16 bg-surface/80 backdrop-blur-md dark:bg-surface-container-low/80 border-b border-outline-variant/20 shadow-sm">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="sunny">sunny</span>
+<h1 class="font-display-lg text-display-lg text-primary dark:text-primary-fixed tracking-tight scale-75 origin-left">Solaris-Patio</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="sensors">sensors</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</header>
+<main class="pt-24 px-container-margin max-w-2xl mx-auto space-y-gutter">
+<!-- Status Hero Card -->
+<section class="relative overflow-hidden rounded-xl bg-primary text-on-primary p-md shadow-lg flex flex-col gap-sm">
+<div class="absolute top-0 right-0 p-md opacity-20">
+<span class="material-symbols-outlined text-[120px]" data-icon="shield_with_heart">shield_with_heart</span>
+</div>
+<div class="z-10">
+<p class="font-label-caps text-label-caps opacity-80 uppercase tracking-widest">System Health</p>
+<h2 class="font-display-lg text-display-lg mt-1">Current Status: Protected</h2>
+<div class="mt-4 flex items-center gap-2">
+<span class="w-3 h-3 bg-secondary rounded-full animate-pulse terracotta-glow"></span>
+<span class="font-body-md font-semibold">Active Sensors Monitoring</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Controls -->
+<div class="grid grid-cols-2 gap-gutter">
+<!-- Rain Response Toggle -->
+<div class="glass-card p-md rounded-xl navy-glass-border flex flex-col justify-between min-h-[140px]">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary" data-icon="water_drop">water_drop</span>
+<button class="w-12 h-6 bg-secondary-container rounded-full relative flex items-center px-1">
+<div class="w-4 h-4 bg-on-secondary rounded-full ml-auto shadow-sm"></div>
+</button>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-primary">Auto-Rain Response</h3>
+<p class="font-body-md text-on-surface-variant text-[12px]">Closes louvers on moisture</p>
+</div>
+</div>
+<!-- Wind Safety Toggle -->
+<div class="glass-card p-md rounded-xl navy-glass-border flex flex-col justify-between min-h-[140px]">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-secondary" data-icon="air">air</span>
+<button class="w-12 h-6 bg-secondary-container rounded-full relative flex items-center px-1">
+<div class="w-4 h-4 bg-on-secondary rounded-full ml-auto shadow-sm"></div>
+</button>
+</div>
+<div>
+<h3 class="font-title-sm text-title-sm text-primary">High Wind Safety</h3>
+<p class="font-body-md text-on-surface-variant text-[12px]">Locks frame at 25mph+</p>
+</div>
+</div>
+</div>
+<!-- Weather Forecast Widget -->
+<section class="glass-card rounded-xl overflow-hidden shadow-sm navy-glass-border">
+<div class="p-md flex justify-between items-center bg-surface-container-low/50">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="cloud">cloud</span>
+<span class="font-title-sm text-title-sm text-primary">Live Forecast</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-tertiary-container">San Francisco, CA</span>
+</div>
+<div class="p-md grid grid-cols-4 gap-sm text-center">
+<div class="flex flex-col items-center gap-xs">
+<span class="text-[10px] font-label-caps opacity-60">12 PM</span>
+<span class="material-symbols-outlined text-primary" data-icon="wb_sunny">wb_sunny</span>
+<span class="font-title-sm text-primary">72°</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<span class="text-[10px] font-label-caps opacity-60">3 PM</span>
+<span class="material-symbols-outlined text-secondary" data-icon="rainy">rainy</span>
+<span class="font-title-sm text-primary">68°</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<span class="text-[10px] font-label-caps opacity-60">6 PM</span>
+<span class="material-symbols-outlined text-on-primary-container" data-icon="partly_cloudy_day">partly_cloudy_day</span>
+<span class="font-title-sm text-primary">64°</span>
+</div>
+<div class="flex flex-col items-center gap-xs">
+<span class="text-[10px] font-label-caps opacity-60">9 PM</span>
+<span class="material-symbols-outlined text-primary-container" data-icon="bedtime">bedtime</span>
+<span class="font-title-sm text-primary">59°</span>
+</div>
+</div>
+<div class="w-full h-24 bg-surface-container-highest relative overflow-hidden">
+<img class="w-full h-full object-cover mix-blend-multiply opacity-30" data-alt="A sophisticated data visualization chart showing a soft, flowing wave pattern representing temperature and humidity changes. The chart uses a premium color palette of deep navy blue lines against a warm sand background, appearing like a professional architectural or meteorological monitoring tool. The aesthetic is clean, minimalist, and high-tech." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuzeBpkLQueTXbUzR9gLeUMSOtltmRf97mZdM__vPiKh8lM-9cluSDaxZTasXHEMUAV9ia3hCpeY5TBEB1IdVNNw390GVRJZPyCTwzcdDROhka9e-AnPUa3VmkDrcI1T5cGKnJjuHk0AiAaN3GPEzYsbU6OxowiJgrF2kFPmmXL2uqHgB-T0u7h8Ol6X9REytW5gS8_vK37lrMbWad9g8iGBg-t9ziOp2guLbWwMuaSN3o-LDLEW4GUnZYchSKyHMWb7Gs8XjILEUx"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+</section>
+<!-- History Log -->
+<section class="space-y-sm">
+<div class="flex justify-between items-center">
+<h3 class="font-title-sm text-title-sm text-primary">Safety History</h3>
+<span class="font-label-caps text-[10px] text-secondary cursor-pointer hover:underline">View All</span>
+</div>
+<div class="space-y-xs">
+<!-- Action Item -->
+<div class="flex items-center gap-md p-sm bg-surface-container-low rounded-lg border border-outline-variant/10">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="thunderstorm">thunderstorm</span>
+</div>
+<div class="flex-1">
+<h4 class="font-body-md font-semibold text-primary">Rain Protection Activated</h4>
+<p class="text-[12px] text-on-surface-variant">Louvers closed to 0° seal</p>
+</div>
+<span class="text-[11px] font-label-caps opacity-60">2H AGO</span>
+</div>
+<!-- Action Item -->
+<div class="flex items-center gap-md p-sm bg-surface-container-low rounded-lg border border-outline-variant/10">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="air">air</span>
+</div>
+<div class="flex-1">
+<h4 class="font-body-md font-semibold text-primary">Wind Anchor Locked</h4>
+<p class="text-[12px] text-on-surface-variant">Gusts detected over 30mph</p>
+</div>
+<span class="text-[11px] font-label-caps opacity-60">YESTERDAY</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 px-4 pb-safe bg-surface/90 backdrop-blur-lg dark:bg-surface-container/90 border-t border-outline-variant/30 shadow-[0px_-10px_30px_rgba(27,38,59,0.08)] rounded-t-xl">
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+<span class="font-label-caps text-label-caps mt-1">Louvers</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="thermostat">thermostat</span>
+<span class="font-label-caps text-label-caps mt-1">Climate</span>
+</div>
+<div class="flex flex-col items-center justify-center text-secondary dark:text-secondary-fixed bg-secondary-container/10 rounded-full px-4 py-1 scale-90 transition-transform duration-200 ease-out">
+<span class="material-symbols-outlined" data-icon="wb_incandescent" style="font-variation-settings: 'FILL' 1;">wb_incandescent</span>
+<span class="font-label-caps text-label-caps mt-1">Safety</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-tertiary-fixed-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-label-caps text-label-caps mt-1">Scenes</span>
+</div>
+</nav>
+</body></html>
